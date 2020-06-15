@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024px, initial-scale=1.0">
+    <title>자기소개</title>
+    <link rel="stylesheet" href="css/introduce.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap" rel="stylesheet">
+    <script src="js/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">홈</a></li>
+                <li><a href="introduce.html">자기소개</a></li>
+                <li><a href="interest.html">관심사</a></li>
+                <li><a href="devroadmap.html">개발자 로드맵</a></li>
+                <!-- <li><a href="signup.html">회원가입</a></li> -->
+            </ul>
+        </div>
+        <hr width="80%">
+    </header>
+    <section>
+        <div class="pr">
+            <img src="images/main.png" alt="내사진" width="200px">
+            <br>
+            <p id="line"><sapn><strong>Lee Ye Sol</strong></sapn></p><br>
+            <h4>BIRTH</h4><p>1995.05.02</p><br>
+            <h4>PHONE</h4><p>010-1234-1234</p><br>
+            <h4>EMAIL</h4><p>6.6yesol@gmail.com</p>
+        </div>
+        <div class="edu">
+            <h2>EDUCATION</h2>
+            <p>2011.03 - 2014.02</p><br>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;태릉고등학교 졸업</p><br>
+            <p>2014.03 - 2019.08</p><br>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;강원대학교 컴퓨터과학과 졸업</p><br>
+            <p>2020.03 - 2020.10</p><br>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;스마트 콘텐츠 융합 응용 SW 엔지니어 양성과정(KH정보교육원)</p>
+        </div>
+        <div class="skills">
+            <h2>SKILLS</h2>
+            <!-- <p>JAVA</p><canvas id="bar1" width="300" height="20"><canvas class="slideRight" width="300" height="20"></canvas></canvas><br>
+            <p>ORACLE DB</p><canvas id="bar2" width="300" height="20"></canvas><br>
+            <p>HTML5 / CSS</p><canvas id="bar3" width="300" height="20"></canvas><br>
+            <p>JAVASCRIPT</p><canvas id="bar4" width="300" height="20"></canvas><br>
+            <p>JQUERY</p><canvas id="bar5" width="300" height="20"></canvas><br> -->
+            <div class="pie-chart pie-chart1" id="chart1"><span class="center">80%</span></div>
+            <div class="pie-chart pie-chart2"><span class="center">80%</span></div>
+            <div class="pie-chart pie-chart3"><span class="center">60%</span></div>
+            <div class="pie-chart pie-chart4"><span class="center">60%</span></div>
+            <div class="pie-chart pie-chart5"><span class="center">50%</span></div><br>
+            <p>JAVA</p>
+            <p>ORACLE DB</p>
+            <p>HTML5 / CSS</p>
+            <p>JAVASCRIPT</p>
+            <p>JQUERY</p>
+        </div>
+    </section>
+    <script>
+        $(window).ready(function(){
+        draw(80, '.pie-chart1', '#F0A875');
+        draw(80, '.pie-chart2', '#ff0');
+        draw(60, '.pie-chart3','#9BDF90');
+        draw(60, '.pie-chart4','#51E3F0');
+        draw(50, '.pie-chart5','#F594A7');
+        });
+
+        function draw(max, classname, colorname){
+        var i=1;
+            var func1 = setInterval(function(){
+            if(i<max){
+                color1(i,classname,colorname);
+                i++;
+            } else{
+                clearInterval(func1);
+            }
+            },10);
+        }
+        function color1(i, classname,colorname){
+        $(classname).css({
+                "background":"conic-gradient("+colorname+" 0% "+i+"%, #ffffff "+i+"% 100%)"
+        });
+        }
+
+
+        function replay(){
+        draw(80, '.pie-chart1', '#F0A875');
+        draw(80, '.pie-chart2', '#ff0');
+        draw(60, '.pie-chart3','#9BDF90');
+        draw(60, '.pie-chart4','#51E3F0');
+        draw(50, '.pie-chart5','#F594A7');
+        }
+    </script>
+</body>
+</html>
